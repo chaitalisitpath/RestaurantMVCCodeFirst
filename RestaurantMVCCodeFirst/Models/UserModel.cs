@@ -10,11 +10,11 @@ namespace RestaurantMVCCodeFirst.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int UserId { get; set; }
 
-        [Required(ErrorMessage = "Please enter your name")]
+        [Required]
         [MaxLength(100)]
         public string UserName { get; set; }
 
-        [Required(ErrorMessage = "Please enter password")]
+        [Required]
         public string Password { get; set; }
 
         [Required]

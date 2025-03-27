@@ -9,12 +9,12 @@ namespace RestaurantMVCCodeFirst.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int MenuId { get; set; }
 
-        [Required(ErrorMessage = "Please enter dish name")]
+        [Required]
         public string Name { get; set; }    
 
         public string Description { get; set; }
 
-        [Required(ErrorMessage = "Please enter dish price")]
+        [Required]
         public decimal Price { get; set; }
 
         [Required]

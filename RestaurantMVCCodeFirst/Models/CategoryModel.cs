@@ -9,7 +9,7 @@ namespace RestaurantMVCCodeFirst.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int CategoryId { get; set; }
 
-        [Required(ErrorMessage = "Please select category")]
+        [Required]
         public string CategoryName { get; set; }
     }
 }

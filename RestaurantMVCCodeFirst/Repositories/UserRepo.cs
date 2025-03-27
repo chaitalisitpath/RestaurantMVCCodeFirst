@@ -12,14 +12,14 @@ namespace RestaurantMVCCodeFirst.Repositories
         {
             _context = context;
         }
-        public bool Add(UserModel user)
-        {
-            return true;
-        }
-        public List<UserModel> Get()
-        {
-            var res = _context.Users.ToList();
-            return res;
-        }
+        //public bool Add(UserModel user)
+        //{
+        //    return true;
+        //}
+        //public List<UserModel> Get()
+        //{
+        //    var res = _context.Users.ToList();
+        //    return res;
+        //}
     }
 }

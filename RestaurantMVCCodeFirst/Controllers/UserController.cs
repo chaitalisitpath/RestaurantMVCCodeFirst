@@ -15,7 +15,7 @@ namespace RestaurantMVCCodeFirst.Controllers
 
         public IActionResult Index()
         {
-            _userService.Get();
+            //_userService.Get();
             return View();
         }
 

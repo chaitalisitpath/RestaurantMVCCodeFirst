@@ -4,7 +4,7 @@ namespace RestaurantMVCCodeFirst.Repositories
 {
     public interface IUserRepo
     {
-        bool Add(UserModel user);
-        List<UserModel> Get();
+        //bool Add(UserModel user);
+        //List<UserModel> Get();
     }
 }

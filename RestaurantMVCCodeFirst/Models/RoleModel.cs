@@ -9,7 +9,7 @@ namespace RestaurantMVCCodeFirst.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int RoleId { get; set; }
 
-        [Required(ErrorMessage = "Please select your role")]
+        [Required]
         [MaxLength(50)]
         public string RoleName { get; set; } = string.Empty;
 
