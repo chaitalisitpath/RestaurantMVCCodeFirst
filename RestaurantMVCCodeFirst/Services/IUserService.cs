@@ -7,6 +7,6 @@ namespace RestaurantMVCCodeFirst.Services
     {
         Task<List<RoleModel>> GetRoles();
         Task<bool> Register(RegisterViewModel reg);
-
+        Task<bool> Login (string username, string password);
     }
 }

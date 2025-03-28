@@ -25,6 +25,11 @@ namespace RestaurantMVCCodeFirst.Repositories
             return await _context.Users.AnyAsync(u => u.UserName == username);
         }
 
+        public async Task<bool> Login(string username, string password)
+        {
+            return await _context.Users.AnyAsync(u => u.UserName == username && u.Password == password);
+        }
+
         public async Task<bool> Register(UserModel user)
         {
             _context.Users.Add(user);
