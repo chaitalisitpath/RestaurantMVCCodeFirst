@@ -1,8 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using RestaurantMVCCodeFirst.Models;
 
 namespace RestaurantMVCCodeFirst.ViewModel
 {
-    public class Register
+    public class RegisterViewModel
     {
         public int UserId { get; set; }
 
@@ -16,13 +17,8 @@ namespace RestaurantMVCCodeFirst.ViewModel
         [Required(ErrorMessage = "Please select user type")]
         public int RoleId { get; set; }
 
-        public List<RoleDropdownItems> Roles { get; set; }
-
+       
     }
-    public class RoleDropdownItems
-    { 
-        public int RoleId { get; set; }
-        public string RoleName { get; set; }
-    }
+   
 
 }

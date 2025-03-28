@@ -22,13 +22,14 @@ namespace RestaurantMVCCodeFirst.Models
 
         [Required]
         [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
-        public DateTime CreatedDT { get; set; } = DateTime.UtcNow;
+        public DateTime CreatedDT { get; set; } 
 
-        public DateTime UpdatedDT { get; set; } 
+        public DateTime UpdatedDT { get; set; }
+
+        [ForeignKey("RoleModel")]
         public int RoleId { get; set; }
 
-        [ForeignKey("RoleId")]
-        public RoleModel Roles{ get; set; }
+        public virtual RoleModel RoleModel { get; set; }
 
     }
     

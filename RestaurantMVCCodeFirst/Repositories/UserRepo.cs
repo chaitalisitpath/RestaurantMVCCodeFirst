@@ -1,6 +1,8 @@
 ﻿using System.Data;
+using Microsoft.EntityFrameworkCore;
 using RestaurantMVCCodeFirst.Data;
 using RestaurantMVCCodeFirst.Models;
+using RestaurantMVCCodeFirst.ViewModel;
 
 namespace RestaurantMVCCodeFirst.Repositories
 {
@@ -12,14 +14,22 @@ namespace RestaurantMVCCodeFirst.Repositories
         {
             _context = context;
         }
-        //public bool Add(UserModel user)
-        //{
-        //    return true;
-        //}
-        //public List<UserModel> Get()
-        //{
-        //    var res = _context.Users.ToList();
-        //    return res;
-        //}
+
+        public async Task<List<RoleModel>> GetRoles()
+        {
+            return await _context.Roles.ToListAsync();
+        }
+
+        public async Task<bool> GetuserByUsername(string username)
+        {
+            return await _context.Users.AnyAsync(u => u.UserName == username);
+        }
+
+        public async Task<bool> Register(UserModel user)
+        {
+            _context.Users.Add(user);
+            int isAffected = await _context.SaveChangesAsync();
+            return isAffected > 0 ? true : false;
+        }
     }
 }

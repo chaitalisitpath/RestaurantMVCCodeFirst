@@ -18,14 +18,11 @@ namespace RestaurantMVCCodeFirst.Data
                 .HasIndex(u => u.UserName)
                 .IsUnique();
 
-            modelBuilder.Entity<RoleModel>(entity =>
-            {
-
-                entity.HasData(
+            modelBuilder.Entity<RoleModel>().HasData(
                     new RoleModel { RoleId = 1, RoleName = "User" },
                     new RoleModel { RoleId = 2, RoleName = "Admin" }
                     );
-            });
+           
 
             modelBuilder.Entity<CategoryModel>(entity =>
             {
@@ -40,7 +37,8 @@ namespace RestaurantMVCCodeFirst.Data
 
 
             });
-                
+            modelBuilder.Entity<UserModel>().Property(u => u.CreatedDT).HasDefaultValueSql("GETDATE()");
+
         }
     }
 }

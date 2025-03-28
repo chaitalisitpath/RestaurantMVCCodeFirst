@@ -1,10 +1,12 @@
 ﻿using RestaurantMVCCodeFirst.Models;
+using RestaurantMVCCodeFirst.ViewModel;
 
 namespace RestaurantMVCCodeFirst.Repositories
 {
     public interface IUserRepo
     {
-        //bool Add(UserModel user);
-        //List<UserModel> Get();
+        Task<List<RoleModel>> GetRoles();
+        Task<bool> Register(UserModel user);
+        Task<bool> GetuserByUsername(string username);
     }
 }

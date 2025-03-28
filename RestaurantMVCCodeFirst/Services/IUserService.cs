@@ -1,6 +1,12 @@
-﻿namespace RestaurantMVCCodeFirst.Services
+﻿using RestaurantMVCCodeFirst.Models;
+using RestaurantMVCCodeFirst.ViewModel;
+
+namespace RestaurantMVCCodeFirst.Services
 {
     public interface IUserService
     {
+        Task<List<RoleModel>> GetRoles();
+        Task<bool> Register(RegisterViewModel reg);
+
     }
 }
