@@ -36,13 +36,14 @@ namespace RestaurantMVCCodeFirst.Controllers
             try
             {
                 bool isRegistered = await _userService.Register(model);
-                if (!isRegistered)
+                if (isRegistered)
                 {
                     TempData["SuccessMessage"] = "Registration successful. You can now log in.";
                     return RedirectToAction("Login");
                 }
                 else
                 {
+                    ViewData["UserExistsMessage"] = "User already exists";
                     return View(model);
                     //ModelState.AddModelError("", "Username already exists. Please try another one.");
                 }
@@ -50,13 +51,9 @@ namespace RestaurantMVCCodeFirst.Controllers
             catch (Exception ex)
             {
                 return View(ex.Message);
-                //ModelState.AddModelError("", "An unexpected error occurred. Please try again.");
-                //ModelState.AddModelError("An unexpected error occurred. Please try again.",ex.Message);
-
+                
             }
 
-            //model.Roles = await _userService.GetRoles();
-            return View(model);
         }
     }
 
